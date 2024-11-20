@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main {
+    height: 1000px;
+}
+
+#exit-popup {
+    transition: .4s ease;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+}
+#exit-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+#exit-popup-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+#exit-popup-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 500px;
+    width: 80%;
+}
+#exit-popup-inner a {
+    width: 100%;
+    height: auto;
+}
+#exit-popup-inner a img {
+    width: 100%;
+    height: auto;
+}
+#exit-popup-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%,-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: darkgray;
+    cursor: pointer;
+}
+#exit-popup-close::before {
+    position: absolute;
+    content: "";
+    transform: rotate(-45deg);
+    top: 24px;
+    left: 12px;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+}
+#exit-popup-close::after {
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    bottom: 24px;
+    right: 12px;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+}
+@media screen and (max-width: 768px) {
+    #exit-popup-close {
+        width: 40px;
+        height: 40px;
+        transform: translate(25%, -50%);
+    }
+    #exit-popup-close::before {
+        top: 19px;
+        left: 11px;
+        width: 18px;
+    }
+    #exit-popup-close::after {
+        bottom: 19px;
+        right: 11px;
+        width: 18px;
+    }
+
+}
